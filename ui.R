@@ -9,15 +9,15 @@
 
 library(shiny)
 
-source("/srv/shiny-server/survey-view-edit/modFunctionUI.R")
+source("modFunctionUI.R")
 
 # Define UI
 ui = basicPage(
     mainPanel(
         
         actionButton("reset", "Reset"),
+        actionButton("save", "Save"),
         tags$hr(),
         modFunctionUI("editable"),
-        actionButton("run", "Save", color = "teal")
         )
 )

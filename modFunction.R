@@ -1,4 +1,4 @@
-modFunction <- function(input, output, session, data,reset) {
+modFunction <- function(input, output, session, data,reset,save) {
   
   v <- reactiveValues(data = data)
   data
@@ -32,6 +32,26 @@ modFunction <- function(input, output, session, data,reset) {
   ### Reset Table
   observeEvent(reset(), {
     v$data <- data # your default data
+  })
+  
+  ### Reset Table
+  observeEvent(save(), {
+    print("Saving live data")
+    df <- v$data
+    print(df)
+    write.csv(df,
+              "id_output.csv",
+              row.names = F)
+    print("Saving backup data")
+    write.csv(
+      data,
+      paste0(
+        Sys.Date(),
+        "id_output.csv"
+      ),
+      row.names = F
+    )
+    showNotification(paste("Data Updated"), duration = 3)
   })
   
   print(isolate(colnames(v$data)))
