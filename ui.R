@@ -9,6 +9,7 @@
 
 library(shiny)
 
+source("/srv/shiny-server/survey-view-edit/modFunctionUI.R")
 
 # Define UI
 ui = basicPage(
