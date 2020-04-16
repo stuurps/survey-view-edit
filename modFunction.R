@@ -40,12 +40,12 @@ modFunction <- function(input, output, session, data,reset,save) {
     df <- v$data
     print(df)
     write.csv(df,
-              "id_output.csv",
+              "/srv/shiny-server/survey/id_output.csv",
               row.names = F)
     print("Saving backup data")
     write.csv(
       data,
-      paste0(
+      paste0("/srv/shiny-server/survey/",
         Sys.Date(),
         "id_output.csv"
       ),
