@@ -10,8 +10,8 @@ md$notes <- as.character(md$notes)
 
 ### Module
 
-source("modFunction.R")
-source("modFunctionUI.R")
+source("/srv/shiny-server/survey-view-edit/modFunction.R")
+source("/srv/shiny-server/survey-view-edit/modFunctionUI.R")
 
 
 server = function(input, output, session) {
