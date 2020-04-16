@@ -52,6 +52,7 @@ modFunction <- function(input, output, session, data,reset,save) {
       row.names = F
     )
     showNotification(paste("Data Updated"), duration = 3)
+    md <- read.csv("/srv/shiny-server/survey/id_output.csv")
   })
   
   print(isolate(colnames(v$data)))
