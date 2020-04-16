@@ -19,6 +19,4 @@ ui = basicPage(
         modFunctionUI("editable"),
         actionButton("run", "Save", color = "teal")
         )
-    
-    
 )
