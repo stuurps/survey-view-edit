@@ -33,6 +33,7 @@ server = function(input, output, session) {
             ),
             row.names = F
         )
+        showNotification(paste("Data Updated"), duration = 3)
     })
     
 }
