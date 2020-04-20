@@ -36,6 +36,7 @@ modFunction <- function(input, output, session, data,reset,save) {
   
   ### Reset Table
   observeEvent(save(), {
+    if(input$passwd == pw){
     print("Saving live data")
     df <- v$data
     print(df)
@@ -53,6 +54,9 @@ modFunction <- function(input, output, session, data,reset,save) {
     )
     showNotification(paste("Data Updated"), duration = 3)
     v$data  <- df
+    } else {
+      print(showNotification(paste("Wrong Password"), duration = 3))
+    }
   })
   
   print(isolate(colnames(v$data)))
