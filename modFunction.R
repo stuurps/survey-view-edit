@@ -37,7 +37,7 @@ modFunction <- function(input, output, session, data,reset,save) {
   
   ### Reset Table
   observeEvent(save(), {
-    if(input$passwd == pw$x){
+    if(isolate(input$passwd) == pw$x){
     print("Saving live data")
     df <- v$data
     print(df)
