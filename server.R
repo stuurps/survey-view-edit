@@ -1,6 +1,8 @@
 library(shiny)
 library(DT)
 
+pw <- "sturps"
+
 ### Data
 md <- read.csv("/srv/shiny-server/survey/id_output.csv")
 md <-  md[order(- md$row_id), ]
