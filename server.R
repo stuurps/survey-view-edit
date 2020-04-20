@@ -2,7 +2,7 @@ library(shiny)
 library(DT)
 
 ### Data
-md <- read.csv("/srv/shiny-server/survey/id_output.csv")
+md <- read.csv("id_output.csv")
 md <-  md[order(- md$row_id), ]
 md$id <- as.character(md$id)
 md$notes <- as.character(md$notes)

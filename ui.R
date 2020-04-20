@@ -17,7 +17,6 @@ ui = basicPage(
         
         actionButton("reset", "Reset"),
         actionButton("save", "Save"),
-        passwordInput("passwd", "Password"),
         tags$hr(),
         modFunctionUI("editable"),
         )

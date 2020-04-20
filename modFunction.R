@@ -1,6 +1,6 @@
 modFunction <- function(input, output, session, data,reset,save) {
   
-  pw <- read.csv("/srv/shiny-server/survey/cde.txt")
+  pw <- read.csv("cde.txt")
   v <- reactiveValues(data = data)
   data
   proxy = dataTableProxy("mod_table")
@@ -22,7 +22,6 @@ modFunction <- function(input, output, session, data,reset,save) {
         print(paste0("Column_Index: ",i))
         v$data[i, j] <<- k
         print(v$data)
-        
       } else {
         stop("You are not supposed to change this column.") # check to stop the user from editing only few columns
       }
@@ -37,7 +36,7 @@ modFunction <- function(input, output, session, data,reset,save) {
   
   ### Reset Table
   observeEvent(save(), {
-    if(isolate(input$passwd) == pw$x){
+
     print("Saving live data")
     df <- v$data
     print(df)
@@ -55,9 +54,7 @@ modFunction <- function(input, output, session, data,reset,save) {
     )
     showNotification(paste("Data Updated"), duration = 3)
     v$data  <- df
-    } else {
-      print(showNotification(paste("Wrong Password"), duration = 3))
-    }
+
   })
   
   print(isolate(colnames(v$data)))
