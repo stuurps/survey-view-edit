@@ -1,5 +1,6 @@
 modFunction <- function(input, output, session, data,reset,save) {
   
+  pw <- read.csv("/srv/shiny-server/survey/cde.txt")
   v <- reactiveValues(data = data)
   data
   proxy = dataTableProxy("mod_table")
